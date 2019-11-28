@@ -7,10 +7,12 @@ const config = {
   authDomain: "crwn-db-f120c.firebaseapp.com",
   databaseURL: "https://crwn-db-f120c.firebaseio.com",
   projectId: "crwn-db-f120c",
-  storageBucket: "",
+  storageBucket: "crwn-db-f120c.appspot.com",
   messagingSenderId: "305763919356",
   appId: "1:305763919356:web:4544a171f8a0ef13"
 };
+
+firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -39,8 +41,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   return userRef;
 };
-
-firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
